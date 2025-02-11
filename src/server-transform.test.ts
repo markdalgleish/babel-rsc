@@ -1,7 +1,7 @@
 import * as assert from "node:assert/strict";
 import { describe, test } from "node:test";
-import type { ParseResult } from "@babel/core";
 
+import type { ParseResult } from "@babel/core";
 import { parse } from "@babel/core";
 import _generate from "@babel/generator";
 
@@ -368,7 +368,7 @@ describe("use server module function declarations", () => {
 		);
 	});
 
-	test.skip("hoists scoped function declaration", () => {
+	test("hoists scoped function declaration", () => {
 		const ast = parse(js`
 			import * as React from "react";
 			export function SayHello({ name }) {
