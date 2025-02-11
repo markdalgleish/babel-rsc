@@ -1,12 +1,7 @@
-# unplugin-rsc
+# babel-rsc
 
-An unplugin for framework authors to implement RSC on top of.
+Babel utilities for React Server Components.
 
-- Docs: https://jacob-ebey.js.org/unplugin-rsc/
-- Source: https://github.com/jacob-ebey/unplugin-rsc/
+This is a work-in-progress based on [unplugin-rsc](https://github.com/jacob-ebey/unplugin-rsc).
 
-## Installation
-
-```sh
-npm i unplugin-rsc
-```
+This is **not a Babel plugin.** Instead, it's a set of utilities for framework authors to operate on Babel ASTs directly.

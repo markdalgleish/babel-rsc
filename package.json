@@ -1,7 +1,7 @@
 {
-	"name": "unplugin-rsc",
-	"version": "0.0.11",
-	"description": "An unplugin for framework authors to implement RSC on top of.",
+	"name": "babel-rsc",
+	"version": "0.0.0",
+	"description": "Babel utilities for React Server Components.",
 	"type": "module",
 	"files": [
 		"src/**/*.ts",
@@ -28,16 +28,14 @@
 		"test": "node --no-warnings --enable-source-maps --loader ts-node/esm --test ./src/*.test.*",
 		"test:watch": "node --no-warnings --enable-source-maps --loader ts-node/esm --watch --test ./src/*.test.*"
 	},
-	"keywords": ["react", "server", "components", "plugin", "unplugin"],
+	"keywords": ["babel", "react", "server", "components"],
 	"author": "Jacob Ebey <jacob.ebey@live.com>",
 	"license": "ISC",
 	"dependencies": {
 		"@babel/core": "7.24.4",
 		"@babel/helper-module-imports": "7.24.3",
 		"@babel/helper-plugin-utils": "7.24.0",
-		"@babel/traverse": "7.24.1",
-		"@rollup/pluginutils": "5.1.0",
-		"unplugin": "1.10.1"
+		"@babel/traverse": "7.24.1"
 	},
 	"devDependencies": {
 		"@babel/types": "7.24.0",
@@ -50,7 +48,6 @@
 		"ts-node": "10.9.2",
 		"typedoc": "0.25.7",
 		"typedoc-plugin-markdown": "3.17.1",
-		"typescript": "5.3.3",
-		"vite": "5.2.11"
+		"typescript": "5.3.3"
 	}
 }
