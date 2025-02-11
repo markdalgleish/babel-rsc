@@ -1,6 +1,6 @@
 // Adapted from @lubieowoce https://github.com/lubieowoce/tangle/blob/main/packages/babel-rsc/src/babel-rsc-actions.ts
 
-import type { BabelFileResult, NodePath, ParseResult } from "@babel/core";
+import type { NodePath, ParseResult } from "@babel/core";
 import { template, traverse, types as t } from "@babel/core";
 import { addNamed as addNamedImport } from "@babel/helper-module-imports";
 import type { Scope } from "@babel/traverse";
