@@ -3,12 +3,13 @@
 import type { NodePath, ParseResult } from "@babel/core";
 import { types as t, template, traverse } from "@babel/core";
 import { addNamed as addNamedImport } from "@babel/helper-module-imports";
-import type { Scope } from "@babel/traverse";
 
 type FnPath =
 	| NodePath<t.ArrowFunctionExpression>
 	| NodePath<t.FunctionDeclaration>
 	| NodePath<t.FunctionExpression>;
+
+type Scope = NodePath["scope"];
 
 export type ServerTransformOptions = {
 	id(filename: string, directive: "use client" | "use server"): string;
