@@ -1,5 +1,5 @@
 import type { NodePath, ParseResult } from "@babel/core";
-import { traverse, types as t } from "@babel/core";
+import { types as t, traverse } from "@babel/core";
 import { addNamed as addNamedImport } from "@babel/helper-module-imports";
 
 export type ClientTransformOptions = {
