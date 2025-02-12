@@ -34,7 +34,6 @@
 	"dependencies": {
 		"@babel/core": "7.24.4",
 		"@babel/helper-module-imports": "7.24.3",
-		"@babel/helper-plugin-utils": "7.24.0",
 		"@babel/traverse": "7.24.1"
 	},
 	"devDependencies": {
@@ -42,7 +41,6 @@
 		"@biomejs/biome": "1.7.3",
 		"@types/babel__core": "7.20.5",
 		"@types/babel__helper-module-imports": "7.18.3",
-		"@types/babel__helper-plugin-utils": "7.10.3",
 		"@types/babel__traverse": "7.20.5",
 		"@types/node": "20.12.4",
 		"ts-node": "10.9.2",
