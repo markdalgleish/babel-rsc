@@ -450,6 +450,47 @@ describe("use server module function declarations", () => {
 		);
 	});
 
+	test("hoists scoped function declaration with argument and closure", () => {
+		const ast = parse(js`
+			import * as React from "react";
+			export function SayHello({ name, age }) {
+				function formAction(formData) {
+					"use server";
+					console.log({ name, age, formData });
+				}
+				return React.createElement("button", { formAction }, "Say hello!");
+			};
+		`);
+
+		serverTransform(ast, "use-server.js", transformOptions);
+
+		assertAST(
+			ast,
+			js`
+				${wrapBoundArgs}
+				import { $$server as _$$server } from "mwap/runtime/server";
+				import * as React from "react";
+				export const _$$INLINE_ACTION = _$$server(
+					async (_$$CLOSURE, formData) => {
+						var [name, age] = _$$CLOSURE.value;
+						{
+							console.log({ name, age, formData });
+						}
+					},
+					"use server:use-server.js",
+					"_$$INLINE_ACTION"
+				);
+				export function SayHello({ name, age }) {
+					var formAction = _$$INLINE_ACTION.bind(
+						null,
+						_wrapBoundArgs(() => [name, age])
+					);
+					return React.createElement("button", { formAction }, "Say hello!");
+				};
+			`,
+		);
+	});
+
 	test("hoists scoped function declaration with no arguments", () => {
 		const ast = parse(js`
 			import * as React from "react";
